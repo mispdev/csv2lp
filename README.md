@@ -70,7 +70,7 @@ If you are lucky enough to have a more recent version of InfluxDB in use (like e
 
  - Add an additional [Flux data source](https://www.influxdata.com/blog/how-grafana-dashboard-influxdb-flux-influxql/) to Grafana and use Flux queries in Grafana that do the required boolean conversion on the fly. But note that you cannot use multiple datasources in a single panel, and thus cannot mix InfluxQL and Flux queries in a single panel.
 
- - Use Flux to export your measurement with needed type convertion to annotated CSV, drop your measurement in the InfluxDB and import again. If your InfluxDB should not support writing data from annotated CSV, then use `csv2lp` to convert annotated CSV to line protocol format and import that.
+ - Use Flux to export your measurement with needed type conversion to annotated CSV, drop your measurement in the InfluxDB and import again. If your InfluxDB should not support writing data from annotated CSV, then use `csv2lp` to convert annotated CSV to line protocol format and import that.
 
 Let's take a closer look at the last option.
 
@@ -104,7 +104,7 @@ Please note: When exporting your measurement like this, make sure that you apply
 
 ### Deleting old measurement
 
-Before we can import the converted measurement again, we need to delete (drop) the old measurement in the InfluxDB. If you have anything ingesting new data points to this measurment, you should stop/pause it before doing so. Dropping a measurement can be done e.g. using [`influx` CLI](https://docs.influxdata.com/influxdb/v1.8/tools/shell/):
+Before we can import the converted measurement again, we need to delete (drop) the old measurement in the InfluxDB. If you have anything ingesting new data points to this measurement, you should stop/pause it before doing so. Dropping a measurement can be done e.g. using [`influx` CLI](https://docs.influxdata.com/influxdb/v1.8/tools/shell/):
 
 ```
     > USE mydb
@@ -127,7 +127,7 @@ Right after uploading the data you can also use the "Explore" mode of Chronograf
 
 ### Checking if importing annotated CSV works directly
 
-Depending on your version of InfluxDB it might be possible that you can import annotated CSV directly, so you do not need to do the additonal step of using `csv2lp` to convert to line protocol format.
+Depending on your version of InfluxDB it might be possible that you can import annotated CSV directly, so you do not need to do the additional step of using `csv2lp` to convert to line protocol format.
 
 To check this, in Chronograf switch from "InfluxQL" to "Flux" in explore mode (buttons right next to the drop-down for selecting the data source in upper left area). Once in Flux mode, enter the following Flux query:
 
