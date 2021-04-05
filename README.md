@@ -41,8 +41,8 @@ $GOPATH/bin/csv2lp
 You should now see the following:
 
 ```
-csv2lp
-------
+csv2lp v0.0.1
+-------------
 
 Convert annotated CSV as exported via Flux to InfluxDB line protocol.
 

@@ -18,8 +18,8 @@ func main() {
 	args := os.Args[1:]
 
 	if len(args) < 1 {
-		fmt.Println("csv2lp")
-		fmt.Println("------")
+		fmt.Println("csv2lp v0.0.1")
+		fmt.Println("-------------")
 		fmt.Println("\nConvert annotated CSV as exported via Flux to InfluxDB line protocol.")
 		fmt.Println("\nUsing csv2lp[1] library of InfluxDB.")
 		fmt.Println("[1] https://github.com/influxdata/influxdb/tree/master/pkg/csv2lp")
